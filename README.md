@@ -12,9 +12,18 @@ Funktionen:
 ## Struktur
 ```
 demo-project/
-├─ .github/workflows/ci.yml
+├─ .github/
+│  └─ workflows/
+│     └─ ci.yml
 ├─ demo-helm/
+│  ├─ Chart.yaml
+│  ├─ values.yaml
+│  └─ templates/
+│     ├─ deployment.yaml
+│     ├─ service.yaml
+│     └─ ingress.yaml
 ├─ policy/
+│  └─ security.rego
 ├─ Dockerfile
 └─ README.md
 ```
