@@ -41,8 +41,7 @@ conftest
 git
 
 ## Lokale Tests mit `act`
-1. Installiere [act](https://github.com/nektos/act) und Docker.
-2. Im Projektverzeichnis:
+
 ```bash
 act -j build --container-architecture linux/amd64 --privileged
 ```
