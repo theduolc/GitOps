@@ -1,0 +1,15 @@
+replicaCount: 1
+image:
+  repository: demo-app
+  tag: "latest"
+  pullPolicy: IfNotPresent
+service:
+  type: ClusterIP
+  port: 8080
+podSecurityContext: {}
+securityContext: {}
+volumes: []
+volumeMounts: []
+nodeSelector: {}
+tolerations: []
+affinity: {}
