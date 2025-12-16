@@ -28,17 +28,17 @@ demo-project/
 └─ README.md
 ```
 
-## Installiere diese Tools (kurze Übersicht — Befehle folgen):
+## Installiere diese Tools
 
-Docker (Engine + docker-compose)
-kubectl
-kind
-helm
-argocd CLI (optional, aber praktisch)
-act (zum lokalen Ausführen von GitHub Actions)
-trivy
-conftest
-git
+1. Docker (Engine + docker-compose)
+2. kubectl
+3. kind
+4. helm
+5. argocd CLI (optional, aber praktisch)
+6. act (zum lokalen Ausführen von GitHub Actions)
+7. trivy
+8. conftest
+9. git
 
 ## Lokale Tests mit `act`
 
