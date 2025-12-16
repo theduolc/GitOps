@@ -28,6 +28,18 @@ demo-project/
 └─ README.md
 ```
 
+## Installiere diese Tools (kurze Übersicht — Befehle folgen):
+
+Docker (Engine + docker-compose)
+kubectl
+kind
+helm
+argocd CLI (optional, aber praktisch)
+act (zum lokalen Ausführen von GitHub Actions)
+trivy
+conftest
+git
+
 ## Lokale Tests mit `act`
 1. Installiere [act](https://github.com/nektos/act) und Docker.
 2. Im Projektverzeichnis:
