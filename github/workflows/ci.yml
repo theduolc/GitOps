@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: docker:24.0-dind
+      options: --privileged
+    steps:
+      # Git Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Set up Docker CLI
+      - name: Set up Docker
+        run: |
+          apk add --no-cache docker-cli bash curl git tar gzip helm
+
+      # Build Docker image
+      - name: Build Docker image
+        run: docker build -t demo-app:local .
+
+      # Scan Docker image with Trivy
+      - name: Scan image with Trivy
+        run: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image --exit-code 1 --severity HIGH,CRITICAL demo-app:local || true
+
+      # Render Helm templates
+      - name: Render Helm templates
+        run: helm template demo-helm ./demo-helm > rendered.yaml
+
+      # Create Conftest policy
+      - name: Create Conftest policy
+        run: |
+          mkdir -p policy
+          cat > policy/security.rego <<'REGO'
+          package main
+
+          deny[msg] {
+            input.Kind == "Deployment"
+            not input.spec.template.spec.containers[0].securityContext
+            msg = "Missing container securityContext"
+          }
+          REGO
+
+      # Run Conftest tests
+      - name: Run Conftest
+        run: |
+          docker run --rm -v $PWD:/workspace -w /workspace instrumenta/conftest:latest test rendered.yaml --policy ./policy
+
