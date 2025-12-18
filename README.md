@@ -47,10 +47,10 @@ act -j build --container-architecture linux/amd64 --privileged
 ```
 
 ## GitHub Actions
-1. Push in dein GitHub-Repo.
-2. Workflow wird automatisch ausgeführt.
+1. Push in ein Git-Repo
+2. Workflow wird automatisch ausgeführt
 
 ## Hinweise
-- `Trivy` wird per Container ausgeführt.
-- `Conftest` prüft Policies im `policy/` Ordner.
-- Helm Charts liegen in `demo-helm/`.
+- `Trivy` wird per Container ausgeführt
+- `Conftest` prüft Policies im `policy/` Ordner
+- Helm Charts liegen in `demo-helm/`
