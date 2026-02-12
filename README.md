@@ -38,7 +38,7 @@ demo-project/
 6. act (zum lokalen Ausführen von GitHub Actions)
 7. trivy
 8. conftest
-9. git
+9. Gitea
 
 ## Lokale Tests mit `act`
 
