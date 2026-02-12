@@ -54,3 +54,6 @@ act -j build --container-architecture linux/amd64 --privileged
 - `Trivy` wird per Container ausgeführt
 - `Conftest` prüft Policies im `policy/` Ordner
 - Helm Charts liegen in `demo-helm/`
+
+<img width="1536" height="1024" alt="ChatGPT Image 12  Feb  2026, 23_40_52" src="https://github.com/user-attachments/assets/b3a3d425-6106-4d56-a6f7-054ba70ddc45" />
+
