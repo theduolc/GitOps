@@ -1,7 +1,6 @@
 # Demo CI/CD Project
 
 ## Projektübersicht
-Dieses Projekt zeigt eine komplette CI/CD Pipeline für ein Demo-Helm-Chart und Docker Image.  
 
 Es soll eine kleine Python-Webapp (Flask) gebaut werden, verpackt in ein Docker-Image. Für dieses Projekt wird Helm-Chart verwendet und ein lokaler kind-Kubernetes-Cluster betrieben. Mit ArgoCD in dem Cluster wird die App per GitOps auf einem lokalen Gitea Git-Server verwaltet. Mit act wird eine lokale CI-Pipeline (GitHub Actions lokal) erzeugt die das Image baut, mit Trivy scannt und mit conftest eine Policy prüft.
 
@@ -36,7 +35,6 @@ demo-project/
 2. kubectl
 3. kind (lokaler Kubernetes-Cluster)
 4. helm
-5. argocd CLI (optional, aber praktisch)
 6. act (zum lokalen Ausführen von GitHub Actions)
 7. trivy
 8. conftest
